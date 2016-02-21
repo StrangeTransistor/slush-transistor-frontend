@@ -1,0 +1,26 @@
+{
+     "name": "slush-transistor-frontend",
+  "version": "0.0.0",
+  "private":  true,
+
+   "author": "Strange Transistor team",
+  "license": "MIT",
+
+  "repository": "StrangeTransistor/slush-transistor-frontend",
+
+  "keywords":
+  [
+    "slushgenerator"
+  ],
+
+  "dependencies":
+  {
+        "gulp": "3.9",
+    "inquirer": "0.12",
+    "rootpath": "StreetStrider/rootpath#v1.4.0"
+  },
+  "peerDependencies":
+  {
+    "slush": "^1"
+  }
+}
