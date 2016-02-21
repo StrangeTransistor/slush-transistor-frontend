@@ -19,6 +19,11 @@
     "inquirer": "0.12",
     "rootpath": "StreetStrider/rootpath#v1.4.0",
 
+       "gulp-concat": "^2.6",
+         "gulp-less": "^3",
+      "gulp-postcss": "^6.1",
+      "autoprefixer": "^6.3",
+
       "lodash": "^4",
     "bluebird": "^3.3",
 
