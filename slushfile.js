@@ -30,3 +30,8 @@ gulp.task('less-watch', () =>
 {
 	return css.pipelines.dev.watch(buns, build)
 })
+
+gulp.task('less-list', () =>
+{
+	return css.list(buns)
+})
