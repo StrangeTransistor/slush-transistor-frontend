@@ -8,6 +8,6 @@ var target = require('rootpath')(process.cwd())
 
 gulp.task('default', () =>
 {
-	src(root('carcass/**'))
-	.pipe(dst(target('result')))
+	return src(root('carcass/**'))
+	.pipe(dst(target()))
 })
