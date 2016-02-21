@@ -8,6 +8,8 @@ var gulp = require('gulp')
 var  src = gulp.src
 var  dst = gulp.dest
 
+var watch = require('./lib/watch-stream')
+
 var cat = require('gulp-concat')
 var css = require('./lib/css')
 
@@ -22,7 +24,12 @@ gulp.task('less', () =>
 	return src(buns('index/index.less'))
 	.pipe(css.less())
 	.pipe(css.prefix())
-	.pipe(css.min())
+	// .pipe(css.min())
 	.pipe(cat('bundle.css'))
 	.pipe(dst(build()))
+})
+
+gulp.task('less-watch', () =>
+{
+	return watch(buns([ '**/*.less' ]))
 })
