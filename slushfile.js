@@ -22,6 +22,7 @@ gulp.task('less', () =>
 	return src(buns('index/index.less'))
 	.pipe(css.less())
 	.pipe(css.prefix())
+	.pipe(css.min())
 	.pipe(cat('bundle.css'))
 	.pipe(dst(build()))
 })

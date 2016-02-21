@@ -23,6 +23,7 @@
          "gulp-less": "^3",
       "gulp-postcss": "^6.1",
       "autoprefixer": "^6.3",
+           "cssnano": "^3.5",
 
       "lodash": "^4",
     "bluebird": "^3.3",
