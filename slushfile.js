@@ -8,7 +8,7 @@ var gulp = require('gulp')
 var  src = gulp.src
 var  dst = gulp.dest
 
-var watch = watch = require('gulp-watch')
+var watch = require('gulp-watch')
 
 var cat = require('gulp-concat')
 var css = require('./lib/css')
@@ -21,7 +21,7 @@ gulp.task('default', () =>
 	.pipe(dst(target()))
 })
 
-gulp.task('less', () =>
+function less ()
 {
 	return src(buns('index/index.less'))
 	.pipe(css.less())
@@ -29,6 +29,11 @@ gulp.task('less', () =>
 	// .pipe(css.min())
 	.pipe(cat('bundle.css'))
 	.pipe(dst(build()))
+}
+
+gulp.task('less', () =>
+{
+	return less()
 })
 
 gulp.task('less-watch', () =>
@@ -36,20 +41,7 @@ gulp.task('less-watch', () =>
 	return watch(buns([ '**/*.less' ]))
 	.pipe(through((vfile, _, next) =>
 	{
-		console.dir(vfile.history[0].slice(-20))
-
-		src(buns('index/index.less'))
-		.pipe(through((vfile, _, next) =>
-		{
-			console.dir(vfile.history[0].slice(-20))
-			next(null, vfile)
-		}))
-		.pipe(css.less())
-		.pipe(css.prefix())
-		// .pipe(css.min())
-		.pipe(cat('bundle.css'))
-		.pipe(dst(build()))
-
+		less()
 		next()
 	}))
 })
