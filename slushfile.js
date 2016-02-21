@@ -8,10 +8,12 @@ var gulp = require('gulp')
 var  src = gulp.src
 var  dst = gulp.dest
 
-var watch = require('./lib/watch-stream')
+var watch = watch = require('gulp-watch')
 
 var cat = require('gulp-concat')
 var css = require('./lib/css')
+
+var through = require('mississippi').through.obj
 
 gulp.task('default', () =>
 {
@@ -32,4 +34,22 @@ gulp.task('less', () =>
 gulp.task('less-watch', () =>
 {
 	return watch(buns([ '**/*.less' ]))
+	.pipe(through((vfile, _, next) =>
+	{
+		console.dir(vfile.history[0].slice(-20))
+
+		src(buns('index/index.less'))
+		.pipe(through((vfile, _, next) =>
+		{
+			console.dir(vfile.history[0].slice(-20))
+			next(null, vfile)
+		}))
+		.pipe(css.less())
+		.pipe(css.prefix())
+		// .pipe(css.min())
+		.pipe(cat('bundle.css'))
+		.pipe(dst(build()))
+
+		next()
+	}))
 })
