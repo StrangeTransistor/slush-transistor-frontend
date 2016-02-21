@@ -35,3 +35,8 @@ gulp.task('less-list', () =>
 {
 	return css.list(buns)
 })
+
+gulp.task('less-list-watch', () =>
+{
+	return css.list.watch(buns)
+})
