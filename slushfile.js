@@ -21,27 +21,12 @@ gulp.task('default', () =>
 	.pipe(dst(target()))
 })
 
-function less ()
-{
-	return src(buns('index/index.less'))
-	.pipe(css.less())
-	.pipe(css.prefix())
-	// .pipe(css.min())
-	.pipe(cat('bundle.css'))
-	.pipe(dst(build()))
-}
-
 gulp.task('less', () =>
 {
-	return less()
+	return css.pipelines.dev(buns, build)
 })
 
 gulp.task('less-watch', () =>
 {
-	return watch(buns([ '**/*.less' ]))
-	.pipe(through((vfile, _, next) =>
-	{
-		less()
-		next()
-	}))
+	return css.pipelines.dev.watch(buns, build)
 })
