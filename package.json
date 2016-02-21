@@ -17,7 +17,13 @@
   {
         "gulp": "3.9",
     "inquirer": "0.12",
-    "rootpath": "StreetStrider/rootpath#v1.4.0"
+    "rootpath": "StreetStrider/rootpath#v1.4.0",
+
+      "lodash": "^4",
+    "bluebird": "^3.3",
+
+    "find-root": "^0.1",
+         "npmi": "^1"
   },
   "peerDependencies":
   {
