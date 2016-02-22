@@ -1,42 +1,38 @@
 
-var root   = require('rootpath')(__dirname)
+var source = require('rootpath')(__dirname)
 var target = require('rootpath')(process.cwd())
-var buns   = target.partial('web/buns')
-var build  = target.partial('build')
+
+var work = require('./lib/workspace')(source, target)
+
 
 var gulp = require('gulp')
 var  src = gulp.src
 var  dst = gulp.dest
 
-var watch = require('gulp-watch')
-
-var cat = require('gulp-concat')
 var css = require('./lib/css')
-
-var through = require('mississippi').through.obj
 
 gulp.task('default', () =>
 {
-	return src(root('carcass/**'))
-	.pipe(dst(target()))
+	return src(work.source('carcass/**'))
+	.pipe(dst(work.target()))
 })
 
 gulp.task('less', () =>
 {
-	return css.pipelines.dev(buns, build)
+	return css.pipelines.dev(work)
 })
 
 gulp.task('less-watch', () =>
 {
-	return css.pipelines.dev.watch(buns, build)
+	return css.pipelines.dev.watch(work)
 })
 
 gulp.task('less-list', () =>
 {
-	return css.list(buns)
+	return css.list(work)
 })
 
 gulp.task('less-list-watch', () =>
 {
-	return css.list.watch(buns)
+	return css.list.watch(work)
 })
