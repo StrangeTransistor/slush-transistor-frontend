@@ -15,9 +15,9 @@
 
   "dependencies":
   {
-        "gulp": "3.9",
+        "gulp": "^3.9",
     "minimist": "^1.2",
-    "inquirer": "0.12",
+    "inquirer": "^0.12",
     "rootpath": "StreetStrider/rootpath#v1.4.0",
     "console-ultimate": "^2.8",
 
