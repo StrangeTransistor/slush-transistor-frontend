@@ -21,7 +21,6 @@
     "rootpath": "StreetStrider/rootpath#v1.4.0",
     "console-ultimate": "^2.8",
 
-       "gulp-util": "^3",
     "gulp-plumber": "^1.1",
       "gulp-watch": "^4.3",
       "vinyl-source-stream": "^1.1",
