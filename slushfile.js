@@ -1,9 +1,5 @@
 
-var source = require('rootpath')(__dirname)
-var target = require('rootpath')(process.cwd())
-
-var work = require('./lib/workspace')(source, target)
-
+var work = require('./lib/workspace')(process, __dirname)
 
 var gulp = require('gulp')
 var  src = gulp.src
@@ -19,20 +15,26 @@ gulp.task('default', () =>
 
 gulp.task('less', () =>
 {
-	return css.pipelines.dev(work)
-})
-
-gulp.task('less-watch', () =>
-{
-	return css.pipelines.dev.watch(work)
+	if (work.args.watch)
+	{
+		console.info('watch…')
+		return css.pipelines.dev.watch(work)
+	}
+	else
+	{
+		return css.pipelines.dev(work)
+	}
 })
 
 gulp.task('less-list', () =>
 {
-	return css.list(work)
-})
-
-gulp.task('less-list-watch', () =>
-{
-	return css.list.watch(work)
+	if (work.args.watch)
+	{
+		console.info('watch…')
+		return css.list.watch(work)
+	}
+	else
+	{
+		return css.list(work)
+	}
 })
