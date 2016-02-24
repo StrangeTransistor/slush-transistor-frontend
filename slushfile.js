@@ -6,6 +6,8 @@ var  src = gulp.src
 var  dst = gulp.dest
 
 var css = require('./lib/css')
+var js  = require('./lib/js')
+
 
 gulp.task('default', () =>
 {
@@ -37,4 +39,9 @@ gulp.task('less-list', () =>
 	{
 		return css.list(work)
 	}
+})
+
+gulp.task('brw', () =>
+{
+	return js.pipelines.dev(work)
 })
