@@ -1,6 +1,6 @@
 
 var format = require('util').format
-var Weedjet = require('../Weedjet/Weedjet')
+var Weedjet = require('Weedjet/Weedjet')
 
 document.addEventListener('DOMContentLoaded', () =>
 {
