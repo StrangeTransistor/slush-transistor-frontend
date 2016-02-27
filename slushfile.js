@@ -34,5 +34,5 @@ gulp.task('brw', () =>
 
 gulp.task('brw-autoentry', () =>
 {
-	return js.autoentry(work)
+	return wwhen(work, js.autoentry)
 })
