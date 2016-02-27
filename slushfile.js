@@ -39,3 +39,8 @@ gulp.task('brw', () =>
 {
 	return wwhen(work, js.pipelines.dev)
 })
+
+gulp.task('brw-autoentry', () =>
+{
+	return js.autoentry(work)
+})

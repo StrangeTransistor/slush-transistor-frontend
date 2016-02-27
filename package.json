@@ -39,6 +39,7 @@
 
     "find-root": "^0.1",
          "npmi": "^1",
+      "fs-sync": "^1",
 
     "node-notifier": "^4.5"
   },
