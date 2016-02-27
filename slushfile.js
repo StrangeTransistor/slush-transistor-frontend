@@ -5,6 +5,8 @@ var gulp = require('gulp')
 var  src = gulp.src
 var  dst = gulp.dest
 
+var wwhen = require('./lib/watch-when')
+
 var css = require('./lib/css')
 var js  = require('./lib/js')
 
@@ -17,15 +19,7 @@ gulp.task('default', () =>
 
 gulp.task('less', () =>
 {
-	if (work.args.watch)
-	{
-		console.info('watch…')
-		return css.pipelines.dev.watch(work)
-	}
-	else
-	{
-		return css.pipelines.dev(work)
-	}
+	return wwhen(work, css.pipelines.dev)
 })
 
 gulp.task('less-list', () =>
@@ -43,5 +37,5 @@ gulp.task('less-list', () =>
 
 gulp.task('brw', () =>
 {
-	return js.pipelines.dev(work)
+	return wwhen(work, js.pipelines.dev)
 })
