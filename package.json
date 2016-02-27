@@ -23,9 +23,11 @@
 
     "gulp-plumber": "^1.1",
       "gulp-watch": "^4.3",
-      "vinyl-source-stream": "^1.1",
-      "mississippi": "^1.2",
-      "gulp-concat": "^2.6",
+     "gulp-concat": "^2.6",
+     "mississippi": "^1.2",
+
+    "vinyl-source-stream": "^1.1",
+    "vinyl": "^1.1",
 
          "gulp-less": "^3",
       "gulp-postcss": "^6.1",
