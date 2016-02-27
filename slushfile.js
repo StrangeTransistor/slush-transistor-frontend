@@ -24,15 +24,7 @@ gulp.task('less', () =>
 
 gulp.task('less-list', () =>
 {
-	if (work.args.watch)
-	{
-		console.info('watch…')
-		return css.list.watch(work)
-	}
-	else
-	{
-		return css.list(work)
-	}
+	return wwhen(work, css.list)
 })
 
 gulp.task('brw', () =>
