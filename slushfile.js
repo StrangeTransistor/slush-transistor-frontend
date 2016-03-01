@@ -10,11 +10,20 @@ var wwhen = require('./lib/watch-when')
 var css = require('./lib/css')
 var js  = require('./lib/js')
 
+var constant = require('lodash/constant')
 
-gulp.task('default', () =>
+
+gulp.task('setup', () =>
 {
 	return src(work.source('carcass/**'))
 	.pipe(dst(work.target()))
+})
+
+gulp.task('default', () =>
+{
+	work.isWatch = constant(true)
+
+	return gulp.start([ 'less', 'brw' ])
 })
 
 gulp.task('less', () =>
