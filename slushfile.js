@@ -24,7 +24,7 @@ gulp.task('default', () =>
 {
 	work.isWatch = constant(true)
 
-	return gulp.start([ 'less', 'brw' ])
+	return gulp.start([ 'less', 'brw', 'jade' ])
 })
 
 gulp.task('jade', () =>
