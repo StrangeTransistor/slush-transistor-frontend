@@ -7,8 +7,9 @@ var  dst = gulp.dest
 
 var wwhen = require('./lib/watch-when')
 
-var css = require('./lib/css')
-var js  = require('./lib/js')
+var html = require('./lib/html')
+var css  = require('./lib/css')
+var js   = require('./lib/js')
 
 var constant = require('lodash/constant')
 
@@ -24,6 +25,11 @@ gulp.task('default', () =>
 	work.isWatch = constant(true)
 
 	return gulp.start([ 'less', 'brw' ])
+})
+
+gulp.task('jade', () =>
+{
+	return html.pipelines.dev(work)
 })
 
 gulp.task('less', () =>

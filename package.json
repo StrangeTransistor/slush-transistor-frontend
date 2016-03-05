@@ -29,6 +29,8 @@
     "vinyl-source-stream": "^1.1",
     "vinyl": "^1.1",
 
+    "gulp-jade": "^1.1",
+
          "gulp-less": "^3",
       "gulp-postcss": "^6.1",
       "autoprefixer": "^6.3",
