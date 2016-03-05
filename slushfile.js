@@ -29,7 +29,7 @@ gulp.task('default', () =>
 
 gulp.task('jade', () =>
 {
-	return html.pipelines.dev(work)
+	return wwhen(work, html.pipelines.dev)
 })
 
 gulp.task('less', () =>
