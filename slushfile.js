@@ -29,12 +29,12 @@ gulp.task('default', () =>
 
 gulp.task('jade', () =>
 {
-	return wwhen(work, html.pipelines.dev)
+	return wwhen(work, html.pipeline)
 })
 
 gulp.task('less', () =>
 {
-	return wwhen(work, css.pipelines.dev)
+	return wwhen(work, css.pipeline)
 })
 
 gulp.task('less-list', () =>
@@ -44,7 +44,7 @@ gulp.task('less-list', () =>
 
 gulp.task('brw', () =>
 {
-	return wwhen(work, js.pipelines.dev)
+	return wwhen(work, js.pipeline)
 })
 
 gulp.task('brw-autoentry', () =>
