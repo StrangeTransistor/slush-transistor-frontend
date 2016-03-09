@@ -26,8 +26,9 @@
      "gulp-concat": "^2.6",
      "mississippi": "^1.2",
 
-    "vinyl-source-stream": "^1.1",
     "vinyl": "^1.1",
+    "vinyl-source-stream": "^1.1",
+    "gulp-streamify": "^1",
 
     "gulp-jade": "^1.1",
 
@@ -36,7 +37,8 @@
       "autoprefixer": "^6.3",
            "cssnano": "^3.5",
 
-    "browserify": "^13",
+     "browserify": "^13",
+    "gulp-uglify": "^1.5",
 
       "lodash": "^4",
     "bluebird": "^3.3",
