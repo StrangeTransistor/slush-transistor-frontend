@@ -11,6 +11,9 @@ var html = require('./lib/html')
 var css  = require('./lib/css')
 var js   = require('./lib/js')
 
+var assets = require('./lib/assets')
+
+
 var constant = require('lodash/constant')
 
 
@@ -50,4 +53,9 @@ gulp.task('brw', () =>
 gulp.task('brw-autoentry', () =>
 {
 	return wwhen(work, js.autoentry)
+})
+
+gulp.task('assets', () =>
+{
+	return assets.pipeline(work)
 })
