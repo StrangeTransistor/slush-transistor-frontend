@@ -1,4 +1,6 @@
 
+require('console-ultimate/global').replace()
+
 var work = require('./lib/workspace')(process, __dirname)
 
 var gulp = require('gulp')
