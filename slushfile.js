@@ -57,5 +57,5 @@ gulp.task('brw-autoentry', () =>
 
 gulp.task('assets', () =>
 {
-	return assets.pipeline(work)
+	return wwhen(work, assets.pipeline)
 })
