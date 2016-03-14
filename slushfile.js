@@ -8,15 +8,13 @@ var  src = gulp.src
 var  dst = gulp.dest
 
 var wwhen = require('./lib/watch-when')
+var constant = require('lodash/constant')
 
 var html = require('./lib/html')
 var css  = require('./lib/css')
 var js   = require('./lib/js')
 
 var assets = require('./lib/assets')
-
-
-var constant = require('lodash/constant')
 
 
 gulp.task('setup', () =>
