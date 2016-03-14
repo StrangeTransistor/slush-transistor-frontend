@@ -17,19 +17,36 @@ var js   = require('./lib/js')
 var assets = require('./lib/assets')
 
 
+/* setup: run once only */
 gulp.task('setup', () =>
 {
 	return src(work.source('carcass/**'))
 	.pipe(dst(work.target()))
 })
 
+
+/* default → watch = true → all */
 gulp.task('default', () =>
+{
+	return gulp.start('watch')
+})
+
+gulp.task('watch', () =>
 {
 	work.isWatch = constant(true)
 
+	console.info('watch all')
+
+	return gulp.start('all')
+})
+
+gulp.task('all', () =>
+{
 	return gulp.start([ 'less', 'brw', 'jade', 'assets', 'less-list', 'brw-autoentry' ])
 })
 
+
+/* certain tasks */
 gulp.task('jade', () =>
 {
 	return wwhen(work, html.pipeline)
